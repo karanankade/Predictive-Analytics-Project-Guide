@@ -1,0 +1,32 @@
+================================================
+Predictive Analytics: Sales Forecasting Output
+================================================
+
+1. Dataset Generation
+------------------------------------------------
+- File: sales_data.csv
+- Total Records: 54,179
+- Date Range: 2021-01-01 to 2023-12-31 (3 years)
+- Data characteristics: Includes synthetic daily revenue and product categories with simulated weekly and yearly seasonality.
+
+2. Model Evaluation (ARIMA Time Series)
+------------------------------------------------
+- Time-series split: Test set contains the last 6 months of data.
+- Model Configuration: ARIMA(order=(1, 1, 1))
+- Model RMSE (Root Mean Squared Error): 3897.26
+- Model MAE (Mean Absolute Error): 3587.97
+- Final Model Artifact: model.pkl
+
+3. Future Forecast (Next 12 Months)
+------------------------------------------------
+- File: forecast.csv
+- Start Date: 2024-01-01
+- Forecast Highlights (First 3 Months):
+    - 2024-01-01: $36,444.18
+    - 2024-02-01: $36,701.28
+    - 2024-03-01: $36,551.41
+
+4. Dashboard Visualization
+------------------------------------------------
+- Application: dashboard.py
+- Command to run: streamlit run dashboard.py
