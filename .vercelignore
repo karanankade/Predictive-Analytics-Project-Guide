@@ -1,0 +1,5 @@
+.git
+.gitignore
+sales_data.csv
+*.pyc
+__pycache__

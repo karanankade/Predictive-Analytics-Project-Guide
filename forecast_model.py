@@ -3,7 +3,6 @@ import numpy as np
 import pickle
 import warnings
 from statsmodels.tsa.arima.model import ARIMA
-from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 warnings.filterwarnings("ignore")
 
@@ -32,8 +31,8 @@ def build_model():
     
     print("Evaluating model...")
     predictions = model_fit.forecast(steps=len(test))
-    rmse = np.sqrt(mean_squared_error(test, predictions))
-    mae = mean_absolute_error(test, predictions)
+    rmse = float(np.sqrt(np.mean((test - predictions) ** 2)))
+    mae = float(np.mean(np.abs(test - predictions)))
     print(f"Model RMSE: {rmse:.2f}")
     print(f"Model MAE: {mae:.2f}")
     
